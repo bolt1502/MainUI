@@ -1,0 +1,27 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: Ts3561_user_rxf.apk
+compressionType: false
+doNotCompress:
+- arsc
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '17'
+  targetSdkVersion: '17'
+sharedLibrary: false
+unknownFiles:
+  com/mediatek/PaxHeader/miravision: '8'
+  com/ts/backcar/BackcarService.java.bak: '8'
+  com/ts/backcar/Camera2Preview.java.bak: '8'
+  com/ts/main/common/Version.bat: '8'
+  cfg/ts.tab: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.2.2
+versionInfo:
+  versionCode: '1'
+  versionName: '1.0'

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bt_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:scrollbarStyle="outsideOverlay" android:id="@id/btListSearch" android:layout_width="793.0px" android:layout_height="480.0px" android:layout_marginLeft="188.0px" android:layout_marginTop="117.0px" android:listSelector="@drawable/bt_list" android:divider="@drawable/bt_list_up" android:dividerHeight="3.0px" />
+    <EditText android:textSize="35.0px" android:textColor="#ffffffff" android:gravity="center|right" android:id="@id/search" android:background="@drawable/phonebook_search_box" android:layout_width="738.0px" android:layout_height="91.0px" android:layout_marginLeft="198.0px" android:layout_marginTop="13.0px" android:singleLine="true" />
+    <ImageView android:background="@drawable/bt_list_up" android:layout_width="750.0px" android:layout_height="wrap_content" android:layout_marginLeft="196.0px" android:layout_marginTop="100.0px" />
+    <include layout="@layout/bt_sub_items" />
+</RelativeLayout>

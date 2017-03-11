@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bt_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/bt_sub_items" />
+    <ImageView android:layout_width="194.0px" android:layout_height="201.0px" android:layout_marginLeft="272.0px" android:layout_marginTop="111.0px" android:src="@drawable/bt_music_syllable" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="507.0px" android:layout_marginTop="101.0px">
+        <ImageView android:layout_width="52.0px" android:layout_height="52.0px" android:src="@drawable/bt_rd3_music" />
+        <TextView android:textSize="26.0px" android:textColor="#ff00ff00" android:ellipsize="end" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/tv_music_title" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="350.0px" android:layout_height="50.0px" android:layout_marginLeft="50.0px" android:text="NULL" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="507.0px" android:layout_marginTop="175.0px">
+        <ImageView android:id="@id/iv_music_icon_album" android:layout_width="52.0px" android:layout_height="52.0px" android:src="@drawable/bt_rd3_ablum" />
+        <TextView android:textSize="26.0px" android:textColor="#ffffffff" android:ellipsize="end" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/tv_music_icon_album" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="350.0px" android:layout_height="50.0px" android:layout_marginLeft="50.0px" android:text="NULL" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="507.0px" android:layout_marginTop="249.0px">
+        <ImageView android:id="@id/iv_music_icon_artist" android:layout_width="52.0px" android:layout_height="52.0px" android:src="@drawable/bt_rd3_artist" />
+        <TextView android:textSize="26.0px" android:textColor="#ffffffff" android:ellipsize="end" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/tv_music_icon_artist" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="350.0px" android:layout_height="50.0px" android:layout_marginLeft="50.0px" android:text="NULL" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+    </LinearLayout>
+    <ImageButton android:id="@id/btn_music_mute" android:background="@drawable/bt_music_mute" android:layout_width="91.0px" android:layout_height="90.0px" android:layout_marginLeft="298.0px" android:layout_marginTop="407.0px" />
+    <ImageButton android:id="@id/btn_music_prev" android:background="@drawable/bt_music_seekup" android:layout_width="91.0px" android:layout_height="90.0px" android:layout_marginLeft="423.0px" android:layout_marginTop="407.0px" />
+    <ImageButton android:id="@id/btn_music_pause" android:background="@drawable/bt_music_pause" android:layout_width="91.0px" android:layout_height="90.0px" android:layout_marginLeft="549.0px" android:layout_marginTop="407.0px" />
+    <ImageButton android:id="@id/btn_music_play" android:background="@drawable/bt_music_play" android:layout_width="91.0px" android:layout_height="90.0px" android:layout_marginLeft="674.0px" android:layout_marginTop="407.0px" />
+    <ImageButton android:id="@id/btn_music_next" android:background="@drawable/bt_music_seekdn" android:layout_width="91.0px" android:layout_height="90.0px" android:layout_marginLeft="799.0px" android:layout_marginTop="407.0px" />
+</RelativeLayout>

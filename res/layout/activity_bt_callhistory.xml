@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bt_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/bt_sub_items" />
+    <ListView android:id="@id/history_listview" android:layout_width="793.0px" android:layout_height="450.0px" android:layout_marginLeft="190.0px" android:layout_marginTop="10.0px" android:listSelector="@drawable/bt_list" android:divider="@drawable/bt_list_up" android:dividerHeight="3.0px" android:choiceMode="singleChoice" />
+    <Button android:id="@id/btn_received" android:background="@drawable/bt_connected" android:layout_width="70.0px" android:layout_height="70.0px" android:layout_marginLeft="507.0px" android:layout_marginTop="465.0px" />
+    <Button android:id="@id/btn_dialed" android:background="@drawable/bt_already_dial" android:layout_width="70.0px" android:layout_height="70.0px" android:layout_marginLeft="350.0px" android:layout_marginTop="465.0px" />
+    <Button android:id="@id/btn_missed" android:background="@drawable/bt_missed_call" android:layout_width="70.0px" android:layout_height="70.0px" android:layout_marginLeft="663.0px" android:layout_marginTop="465.0px" />
+    <Button android:id="@id/btn_delete_log" android:background="@drawable/bt_del" android:layout_width="70.0px" android:layout_height="70.0px" android:layout_marginLeft="820.0px" android:layout_marginTop="465.0px" />
+</RelativeLayout>

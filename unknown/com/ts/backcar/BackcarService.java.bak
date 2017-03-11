@@ -1,0 +1,107 @@
+package com.ts.backcar;
+
+import android.app.Activity;
+import android.content.Context;
+import android.hardware.camera2.CameraManager;
+import android.util.Log;
+import android.view.Surface;
+import android.view.WindowManager;
+import android.widget.ImageView;
+
+public class BackcarService {
+    private static final String TAG = "BackcarService";
+
+
+    public static final String ACTION_BACKCAR_PREPARE_START = "android.backcar.action.PREPARE_START";
+    public static final String ACTION_BACKCAR_STARTED = "android.backcar.action.STARTED";
+    public static final String ACTION_BACKCAR_FINISH = "android.backcar.action.FINISH";
+    
+    //CameraServiceDetector mCameraServiceDetector = new CameraServiceDetector();
+    
+    public Context mContext =null;
+    public ImageView mView;
+    private WindowManager mWM = null;
+    private CameraManager mCM = null;
+    private AutoFitTextureView mTextureView = null;
+    private Camera2Preview mCamera2Preview = null;
+    private static BackcarService gInst = null;
+    private Activity mActivity = null;
+    public void setActivity(Activity activity) {
+    	Log.i(TAG, "setActivity mActivity= "+mActivity + "activity="+activity);
+        if ((null != mActivity) && (mActivity != activity)) {
+        	Log.i(TAG, "setActivity mActivity= "+mActivity + "activity="+activity);
+            mActivity.finish();
+        }
+        mActivity = activity;
+    }
+    public void StartCamera(AutoFitTextureView tex)
+    {
+    	if(tex==null)
+    	{
+    		Log.e(TAG, "StartCamera tex="+tex);
+    		return ;
+    	}
+    	if (mCamera2Preview!=null) {
+    		Log.e(TAG, "StartCamera mCamera2Preview="+mCamera2Preview);
+    		StopCamera();
+			
+		}
+    //	Log.i(TAG, "StartCamera 1atc_updateCameraStaticInfo 11111 ");
+      //  mCameraServiceDetector.atc_updateCameraStaticInfo();
+     //   Log.i(TAG, "StartCamera 1atc_updateCameraStaticInfo 22222");
+    	mTextureView = tex; 
+    	 Log.i(TAG, "StartCamera 1 tex="+tex);
+    	 if (mCamera2Preview == null) {
+    		
+             int rotation =  Surface.ROTATION_0;//scjmWM.getDefaultDisplay().getRotation();
+             Log.i(TAG, "StartCamera 2=="+rotation);
+             mCamera2Preview = Camera2Preview.newInstance(mTextureView, mCM, rotation,mContext);
+         } else {
+             Log.i(TAG, "BackCarRunnable BACKCAR_START mCamera2Preview is not null L_FAILED");
+         }  
+    	
+    }
+    
+    public void StopCamera()
+    {
+    	if(mCamera2Preview!=null)
+    	{
+    		 Log.i(TAG, "StopCamera=="+mCamera2Preview);
+    		 mCamera2Preview.closeCamera();
+             mCamera2Preview = null;
+    	}
+    	else {
+    		{
+    			Log.i(TAG, "mCamera2Preview== null");
+    		}
+		}
+    	if(mActivity!=null)
+    	{
+    		 Log.i(TAG, "mActivity finish"+mActivity);
+    		mActivity.finish();
+    		mActivity = null;
+    		
+    	}
+    	else {
+    		Log.i(TAG, "mActivity== null");
+		}
+    	
+    }
+    public void InintCamera(Context MyContext)
+    {
+    	
+    //	 mWM = (WindowManager)MyContext.getSystemService(Context.WINDOW_SERVICE);
+    	 mCM = (CameraManager)MyContext.getSystemService(Context.CAMERA_SERVICE);
+    //	 Log.i(TAG, "InintCamera mWM=="+mWM);
+    //	 Log.i(TAG, "InintCamera mCM=="+mCM);
+    }
+    
+	static public BackcarService getInstance() {
+		if (gInst ==null) {
+			gInst = new BackcarService();
+			
+		}
+
+        return (gInst);
+    }
+}
