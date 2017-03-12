@@ -2236,7 +2236,7 @@
 .end method
 
 .method public DealKey()V
-    .locals 13
+    .locals 15
 
     .prologue
     const/4 v12, 0x4
@@ -2515,6 +2515,24 @@
 
     .line 1223
     :sswitch_1
+# START next song in PowerAMP
+    new-instance v13, Landroid/content/Intent;
+
+    const-string/jumbo v14, "com.maxmpz.audioplayer.API_COMMAND"
+
+    invoke-direct {v13, v14}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v14, "cmd"
+
+    const/4 v5, 0x4
+
+    invoke-virtual {v13, v14, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    move-result-object v13
+
+    invoke-virtual {p0, v13}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+# END next song in PowerAMP
+
     invoke-static {}, Lcom/ts/main/common/MainSet;->GetInstance()Lcom/ts/main/common/MainSet;
 
     move-result-object v5
@@ -2547,6 +2565,24 @@
 
     .line 1231
     :sswitch_2
+# START previous song in PowerAMP
+    new-instance v13, Landroid/content/Intent;
+
+    const-string/jumbo v14, "com.maxmpz.audioplayer.API_COMMAND"
+
+    invoke-direct {v13, v14}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v14, "cmd"
+
+    const/4 v5, 0x5
+
+    invoke-virtual {v13, v14, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    move-result-object v13
+
+    invoke-virtual {p0, v13}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+# END previous song in PowerAMP
+
     invoke-static {}, Lcom/ts/main/common/MainSet;->GetInstance()Lcom/ts/main/common/MainSet;
 
     move-result-object v5
