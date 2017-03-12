@@ -352,7 +352,7 @@
 .end method
 
 .method public static GotoWin(II)V
-    .locals 3
+    .locals 6
     .param p0, "nWin"    # I
     .param p1, "nParat1"    # I
 
@@ -432,11 +432,36 @@
 
     .line 349
     :pswitch_4
-    const-string v0, "com.ts.dvdplayer"
+# START launch PowerAMP
+    invoke-static {}, Lcom/ts/main/common/MainSet;->GetInstance()Lcom/ts/main/common/MainSet;
 
-    const-string v1, "com.ts.dvdplayer.SDActivity"
+    move-result-object v0
 
-    invoke-static {v0, v1}, Lcom/ts/main/common/WinShow;->show(Ljava/lang/String;Ljava/lang/String;)V
+    sget-object v1, Lcom/ts/main/common/WinShow;->mContext:Landroid/content/Context;
+
+    const-string v2, "com.maxmpz.audioplayer"
+
+    invoke-virtual {v0, v1, v2}, Lcom/ts/main/common/MainSet;->openApplication(Landroid/content/Context;Ljava/lang/String;)V
+# END launch PowerAMP
+
+# START resume playback in PowerAMP (workaround)
+# this workaround is needed because after several switches between Radio and PowerAMP playback stops for some reason
+    new-instance v3, Landroid/content/Intent;
+
+    const-string/jumbo v4, "com.maxmpz.audioplayer.API_COMMAND"
+
+    invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v4, "cmd"
+
+    const/4 v5, 0x3
+
+    invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+# END resume playback in PowerAMP (workaround)
 
     goto :goto_0
 
