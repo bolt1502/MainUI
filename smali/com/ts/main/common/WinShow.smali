@@ -432,6 +432,17 @@
 
     .line 349
     :pswitch_4
+    const-string v0, "com.ts.MainUI"
+
+    const-string v1, "com.ts.main.avin2.AuxMainActivity"
+
+    invoke-static {v0, v1}, Lcom/ts/main/common/WinShow;->show(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 352
+    :pswitch_5
+
 # START launch PowerAMP
     invoke-static {}, Lcom/ts/main/common/MainSet;->GetInstance()Lcom/ts/main/common/MainSet;
 
@@ -462,16 +473,6 @@
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 # END resume playback in PowerAMP (workaround)
-
-    goto :goto_0
-
-    .line 352
-    :pswitch_5
-    const-string v0, "com.ts.MainUI"
-
-    const-string v1, "com.ts.main.avin2.AuxMainActivity"
-
-    invoke-static {v0, v1}, Lcom/ts/main/common/WinShow;->show(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
