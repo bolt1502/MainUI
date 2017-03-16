@@ -3865,8 +3865,8 @@
         0x30b -> :sswitch_20
         0x30d -> :sswitch_20
         0x30e -> :sswitch_20
-        0x31a -> :sswitch_11
-        0x31f -> :sswitch_f
+        0x31a -> :sswitch_f
+        0x31f -> :sswitch_11
         0x325 -> :sswitch_1a
         0x328 -> :sswitch_1b
         0x329 -> :sswitch_e
