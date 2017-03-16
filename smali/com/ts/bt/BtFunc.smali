@@ -151,10 +151,14 @@
         0x12b -> :sswitch_5
         0x203 -> :sswitch_b
         0x204 -> :sswitch_a
-        0x310 -> :sswitch_4
-        0x315 -> :sswitch_3
-        0x31a -> :sswitch_4
-        0x31f -> :sswitch_3
+#789 (0x315) - SKEY_SEEKDN_1
+#799 (0x31F) - SKEY_CHDN_1
+#784 (0x310) - SKEY_SEEKUP_1
+#794 (0x31A) - SKEY_CHUP_1
+        0x310 -> :sswitch_3
+        0x315 -> :sswitch_4
+        0x31a -> :sswitch_3
+        0x31f -> :sswitch_4
         0x32e -> :sswitch_1
         0x333 -> :sswitch_2
         0x338 -> :sswitch_5

@@ -3915,10 +3915,14 @@
         0x123 -> :sswitch_29
         0x124 -> :sswitch_2d
         0x12b -> :sswitch_2c
-        0x310 -> :sswitch_2d
-        0x315 -> :sswitch_29
-        0x31a -> :sswitch_2d
-        0x31f -> :sswitch_29
+#789 (0x315) - SKEY_SEEKDN_1
+#799 (0x31F) - SKEY_CHDN_1
+#784 (0x310) - SKEY_SEEKUP_1
+#794 (0x31A) - SKEY_CHUP_1
+        0x310 -> :sswitch_29
+        0x315 -> :sswitch_2d
+        0x31a -> :sswitch_29
+        0x31f -> :sswitch_2d
         0x338 -> :sswitch_2c
     .end sparse-switch
 .end method
