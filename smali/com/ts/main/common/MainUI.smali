@@ -2515,23 +2515,32 @@
 
     .line 1223
     :sswitch_1
-# START next song in PowerAMP
+# START Launch companion
+
     new-instance v13, Landroid/content/Intent;
 
-    const-string/jumbo v14, "com.maxmpz.audioplayer.API_COMMAND"
+    const-string v14, "com.wmmaks.c500companion.ACTION"
 
     invoke-direct {v13, v14}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const-string/jumbo v14, "cmd"
+    .line 27
+    .local v13, "intent":Landroid/content/Intent;
+    const-string v14, "com.wmmaks.c500companion"
+
+    const-string v5, "com.wmmaks.c500companion.C500Service"
+
+    invoke-virtual {v13, v14, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 28
+    const-string v14, "CMD"
 
     const/4 v5, 0x4
 
     invoke-virtual {v13, v14, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    move-result-object v13
-
+    .line 29
     invoke-virtual {p0, v13}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-# END next song in PowerAMP
+# END Launch companion
 
     invoke-static {}, Lcom/ts/main/common/MainSet;->GetInstance()Lcom/ts/main/common/MainSet;
 
@@ -2565,23 +2574,31 @@
 
     .line 1231
     :sswitch_2
-# START previous song in PowerAMP
+# START Launch companion
     new-instance v13, Landroid/content/Intent;
 
-    const-string/jumbo v14, "com.maxmpz.audioplayer.API_COMMAND"
+    const-string v14, "com.wmmaks.c500companion.ACTION"
 
     invoke-direct {v13, v14}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const-string/jumbo v14, "cmd"
+    .line 27
+    .local v13, "intent":Landroid/content/Intent;
+    const-string v14, "com.wmmaks.c500companion"
+
+    const-string v5, "com.wmmaks.c500companion.C500Service"
+
+    invoke-virtual {v13, v14, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 28
+    const-string v14, "CMD"
 
     const/4 v5, 0x5
 
     invoke-virtual {v13, v14, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    move-result-object v13
-
+    .line 29
     invoke-virtual {p0, v13}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-# END previous song in PowerAMP
+# END Launch companion
 
     invoke-static {}, Lcom/ts/main/common/MainSet;->GetInstance()Lcom/ts/main/common/MainSet;
 
@@ -3953,33 +3970,32 @@
 
     .line 577
     invoke-virtual {p0}, Lcom/ts/main/common/MainUI;->WmInint()V
-# START launch PowerAMP
-    invoke-static {}, Lcom/ts/main/common/MainSet;->GetInstance()Lcom/ts/main/common/MainSet;
 
-    move-result-object v0
+# START Launch companion
+    new-instance v12, Landroid/content/Intent;
 
-    const-string v2, "com.maxmpz.audioplayer"
+    const-string v13, "com.wmmaks.c500companion.ACTION"
 
-    invoke-virtual {v0, p0, v2}, Lcom/ts/main/common/MainSet;->openApplication(Landroid/content/Context;Ljava/lang/String;)V
-# END launch PowerAMP
+    invoke-direct {v12, v13}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-# START resume playback in PowerAMP
-    new-instance v0, Landroid/content/Intent;
+    .line 27
+    .local v12, "intent":Landroid/content/Intent;
+    const-string v13, "com.wmmaks.c500companion"
 
-    const-string/jumbo v2, "com.maxmpz.audioplayer.API_COMMAND"
+    const-string v14, "com.wmmaks.c500companion.C500Service"
 
-    invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v12, v13, v14}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    const-string/jumbo v2, "cmd"
+    .line 28
+    const-string v13, "CMD"
 
-    const/4 v3, 0x3
+    const/4 v14, 0x2
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v12, v13, v14}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-# END resume playback in PowerAMP
+    .line 29
+    invoke-virtual {p0, v12}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+# END Launch companion
 
     .line 578
     const-string v4, "MainUI"
@@ -4354,23 +4370,32 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-# START pause playing in PowerAMP
+# START Launch companion
     new-instance v12, Landroid/content/Intent;
 
-    const-string/jumbo v13, "com.maxmpz.audioplayer.API_COMMAND"
+    const-string v13, "com.wmmaks.c500companion.ACTION"
 
     invoke-direct {v12, v13}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const-string/jumbo v13, "cmd"
+    .line 27
+    .local v12, "intent":Landroid/content/Intent;
+    const-string v13, "com.wmmaks.c500companion"
 
-    const/4 v14, 0x2
+    const-string v14, "com.wmmaks.c500companion.C500Service"
+
+    invoke-virtual {v12, v13, v14}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 28
+    const-string v13, "CMD"
+
+    const/4 v14, 0x1
 
     invoke-virtual {v12, v13, v14}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    move-result-object v12
-
+    .line 29
     invoke-virtual {p0, v12}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-# END pause playing in PowerAMP
+# END Launch companion
+
 
     .line 637
     invoke-static {}, Lcom/yyw/ts70xhw/Iop;->GetWorkMode()I

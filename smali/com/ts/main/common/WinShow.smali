@@ -95,214 +95,35 @@
 .end method
 
 .method public static DealModeKey()V
-    .locals 6
+## START Launch Companion instead of main function
+    .locals 4
 
     .prologue
-    const/16 v5, 0xf
+    sget-object v0, Lcom/ts/main/common/WinShow;->mContext:Landroid/content/Context;
 
-    .line 202
-    const-string v2, "WinShow"
+    new-instance v1, Landroid/content/Intent;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v2, "com.wmmaks.c500companion.ACTION"
 
-    const-string v4, "nOldMode = "
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .local v1, "intent":Landroid/content/Intent;
+    const-string v2, "com.wmmaks.c500companion"
 
-    sget v4, Lcom/ts/main/common/WinShow;->nOldMode:I
+    const-string v3, "com.wmmaks.c500companion.C500Service"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result-object v3
+    const-string v2, "CMD"
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 v3, 0x3
 
-    move-result-object v3
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 203
-    const-string v2, "WinShow"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Evc.GetInstance().Evol.workmode = "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {}, Lcom/yyw/ts70xhw/Iop;->GetWorkMode()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 204
-    const-string v2, "WinShow"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "nDelayTime = "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    sget v4, Lcom/ts/main/common/WinShow;->nDelayTime:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 205
-    sget v2, Lcom/ts/main/common/WinShow;->nOldMode:I
-
-    invoke-static {}, Lcom/yyw/ts70xhw/Iop;->GetWorkMode()I
-
-    move-result v3
-
-    if-eq v2, v3, :cond_3
-
-    sget v2, Lcom/ts/main/common/WinShow;->nDelayTime:I
-
-    const/16 v3, 0x118
-
-    if-ge v2, v3, :cond_3
-
-    .line 207
-    const/16 v2, 0x12c
-
-    sput v2, Lcom/ts/main/common/WinShow;->nDelayTime:I
-
-    .line 208
-    invoke-static {}, Lcom/yyw/ts70xhw/Iop;->GetWorkMode()I
-
-    move-result v2
-
-    sput v2, Lcom/ts/main/common/WinShow;->nOldMode:I
-
-    .line 209
-    invoke-static {}, Lcom/yyw/ts70xhw/Iop;->GetWorkMode()I
-
-    move-result v1
-
-    .line 210
-    .local v1, "n":I
-    const/4 v0, 0x0
-
-    .local v0, "i":I
-    :goto_0
-    if-le v0, v5, :cond_0
-
-    .line 228
-    .end local v0    # "i":I
-    .end local v1    # "n":I
-    :goto_1
     return-void
-
-    .line 211
-    .restart local v0    # "i":I
-    .restart local v1    # "n":I
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
-
-    if-le v1, v5, :cond_1
-
-    .line 212
-    const/4 v1, 0x1
-
-    .line 215
-    :cond_1
-    invoke-static {v1}, Lcom/ts/main/common/WinShow;->IsModeValid(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 216
-    const-string v2, "WinShow"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "DealModeKey = "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "nOldMode=="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    sget v4, Lcom/ts/main/common/WinShow;->nOldMode:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 217
-    invoke-static {v1}, Lcom/ts/main/common/WinShow;->TsEnterMode(I)I
-
-    goto :goto_1
-
-    .line 210
-    :cond_2
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 225
-    .end local v0    # "i":I
-    .end local v1    # "n":I
-    :cond_3
-    const-string v2, "WinShow"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "DealModeKey = "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    sget v4, Lcom/ts/main/common/WinShow;->nOldMode:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "but workmode have not change"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_1
+## END Launch Companion instead of main function
 .end method
 
 .method public static DealTask()V
@@ -352,7 +173,7 @@
 .end method
 
 .method public static GotoWin(II)V
-    .locals 6
+    .locals 3
     .param p0, "nWin"    # I
     .param p1, "nParat1"    # I
 
@@ -432,6 +253,16 @@
 
     .line 349
     :pswitch_4
+    const-string v0, "com.ts.dvdplayer"
+
+    const-string v1, "com.ts.dvdplayer.SDActivity"
+
+    invoke-static {v0, v1}, Lcom/ts/main/common/WinShow;->show(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 352
+    :pswitch_5
     const-string v0, "com.ts.MainUI"
 
     const-string v1, "com.ts.main.avin2.AuxMainActivity"
@@ -440,50 +271,13 @@
 
     goto :goto_0
 
-    .line 352
-    :pswitch_5
-
+    .line 355
+    :pswitch_6
     const-string v0, "com.ts.MainUI"
 
     const-string v1, "com.ts.main.avin.AvinMainActivity"
 
     invoke-static {v0, v1}, Lcom/ts/main/common/WinShow;->show(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 355
-    :pswitch_6
-
-# START launch PowerAMP
-    invoke-static {}, Lcom/ts/main/common/MainSet;->GetInstance()Lcom/ts/main/common/MainSet;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/ts/main/common/WinShow;->mContext:Landroid/content/Context;
-
-    const-string v2, "com.maxmpz.audioplayer"
-
-    invoke-virtual {v0, v1, v2}, Lcom/ts/main/common/MainSet;->openApplication(Landroid/content/Context;Ljava/lang/String;)V
-# END launch PowerAMP
-
-# START resume playback in PowerAMP (workaround)
-# this workaround is needed because after several switches between Radio and PowerAMP playback stops for some reason
-    new-instance v3, Landroid/content/Intent;
-
-    const-string/jumbo v4, "com.maxmpz.audioplayer.API_COMMAND"
-
-    invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const-string/jumbo v4, "cmd"
-
-    const/4 v5, 0x3
-
-    invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-# END resume playback in PowerAMP (workaround)
 
     goto :goto_0
 
