@@ -61,6 +61,8 @@
 
 .field public static final BROADCAST_LANCHER_FUNC_ACCELERATION:Ljava/lang/String; = "forfan.intent.action.ACCELERATION"
 
+.field public static final BROADCAST_LANCHER_FUNC_BRIGHT_LEVEL:Ljava/lang/String; = "forfan.intent.action.BRIGHT_LEVEL"
+
 .field public static final BROADCAST_LANCHER_FUNC_BLUETOOTH:Ljava/lang/String; = "forfan.intent.action.BLUETOOTH"
 
 .field public static final BROADCAST_LANCHER_FUNC_BRIGHTNESS:Ljava/lang/String; = "forfan.intent.action.BRIGHTNESS"
