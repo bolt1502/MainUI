@@ -3687,7 +3687,7 @@
 	move-result v1
     #move/from16 v1, v23
 
-    invoke-static {v1}, Lcom/yyw/ts70xhw/StSet;->SetBLDay(I)I
+    #invoke-static {v1}, Lcom/yyw/ts70xhw/StSet;->SetBLDay(I)I
     invoke-static {v1}, Lcom/yyw/ts70xhw/StSet;->SetBLNight(I)I
 
 	goto/16 :goto_0

@@ -8505,6 +8505,12 @@
 
     invoke-virtual {v0, v6}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+#START receive Brigthness API broadcast
+	const-string v6, "forfan.intent.action.BRIGHT_LEVEL"
+    invoke-virtual {v0, v6}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+#END  receive Brigthness API broadcast
+	
+
     .line 3664
     const-string v6, "android.intent.category.DEFAULT"
 
