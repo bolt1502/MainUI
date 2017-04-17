@@ -23,7 +23,7 @@
 
 .field public static final V0L_GAIN_MAX:I = 0x64
 
-.field public static final VOL_MAX:I = 0x1e
+.field public static final VOL_MAX:I = 0x32
 
 .field public static final WORKMODE_BT_VOL:I = 0x13
 
@@ -102,11 +102,11 @@
     .locals 8
 
     .prologue
-    const/4 v7, 0x3
+    const/4 v7, 0x2
 
     const/4 v6, 0x0
 
-    const/16 v5, 0x1e
+    const/16 v5, 0x33
 
     const/16 v4, 0xf
 
@@ -137,181 +137,361 @@
     iput v3, p0, Lcom/ts/MainUI/Evc;->Gis_vol_max:I
 
     .line 51
-    const/16 v0, 0x1f
+    const/16 v0, 0x33
 
     new-array v0, v0, [I
 
-    const/4 v1, 0x1
+#iArr[1]    
+	const/4 v1, 0x1
 
-    aput v7, v0, v1
+    const/4 v2, 0x2
 
-    const/4 v1, 0x2
+	aput v2, v0, v1
+
+#iArr[2]    
+	const/4 v1, 0x2
+
+    const/4 v2, 0x4
+
+	aput v2, v0, v1
+#iArr[3]    
+	const/4 v1, 0x3
 
     const/4 v2, 0x6
 
+	aput v2, v0, v1
+
+#iArr[4]
+    const/4 v1, 0x4
+
+    const/16 v2, 0x8
+
     aput v2, v0, v1
 
-    const/16 v1, 0x9
+#iArr[5]
+    const/4 v1, 0x5
 
-    aput v1, v0, v7
+    const/16 v2, 0xa
 
-    const/4 v1, 0x4
+    aput v2, v0, v1
+
+#iArr[6]
+    const/4 v1, 0x6
 
     const/16 v2, 0xc
 
     aput v2, v0, v1
 
-    const/4 v1, 0x5
+#iArr[7]    
+	const/4 v1, 0x7
 
-    aput v4, v0, v1
-
-    const/4 v1, 0x6
-
-    const/16 v2, 0x15
+    const/16 v2, 0xe
 
     aput v2, v0, v1
 
-    const/4 v1, 0x7
+#iArr[8]
+    const/16 v1, 0x8
+
+    const/16 v2, 0x10
+
+    aput v2, v0, v1
+
+#iArr[9]    
+	const/16 v1, 0x9
+
+    const/16 v2, 0x12
+
+    aput v2, v0, v1
+
+#iArr[10] 
+   const/16 v1, 0xa
+
+    .line 52
+    const/16 v2, 0x14
+
+    aput v2, v0, v1
+
+#iArr[11]    
+	const/16 v1, 0xb
+
+    const/16 v2, 0x16
+
+    aput v2, v0, v1
+
+#iArr[12]
+    const/16 v1, 0xc
 
     const/16 v2, 0x18
 
     aput v2, v0, v1
 
-    const/16 v1, 0x8
+#iArr[13]
+    const/16 v1, 0xd
 
-    const/16 v2, 0x1b
-
-    aput v2, v0, v1
-
-    const/16 v1, 0x9
-
-    const/16 v2, 0x1d
+    const/16 v2, 0x1a
 
     aput v2, v0, v1
 
-    const/16 v1, 0xa
+#iArr[14]
+    const/16 v1, 0xe
 
-    .line 52
+    const/16 v2, 0x1c
+
+    aput v2, v0, v1
+
+#iArr[15]
+	const/16 v1, 0xf
+
+    const/16 v2, 0x1e
+
+	aput v2, v0, v1
+
+#iArr[16]
+    const/16 v1, 0x10
+
     const/16 v2, 0x20
 
     aput v2, v0, v1
 
-    const/16 v1, 0xb
+#iArr[17]
+    const/16 v1, 0x11
 
-    const/16 v2, 0x25
+    const/16 v2, 0x22
 
     aput v2, v0, v1
 
-    const/16 v1, 0xc
+#iArr[18]
+    const/16 v1, 0x12
+
+    const/16 v2, 0x24
+
+    aput v2, v0, v1
+
+#iArr[19]
+    const/16 v1, 0x13
+
+    const/16 v2, 0x26
+
+    aput v2, v0, v1
+
+#iArr[20]
+    const/16 v1, 0x14
+
+    .line 53
+    const/16 v2, 0x28
+
+    aput v2, v0, v1
+
+#iArr[21]
+    const/16 v1, 0x15
 
     const/16 v2, 0x2a
 
     aput v2, v0, v1
 
-    const/16 v1, 0xd
+#iArr[22]
+    const/16 v1, 0x16
 
-    const/16 v2, 0x2d
+    const/16 v2, 0x2c
 
     aput v2, v0, v1
 
-    const/16 v1, 0xe
+#iArr[23]
+    const/16 v1, 0x17
+
+    const/16 v2, 0x2e
+
+    aput v2, v0, v1
+
+#iArr[24]
+    const/16 v1, 0x18
 
     const/16 v2, 0x30
 
     aput v2, v0, v1
 
-    const/16 v1, 0x34
-
-    aput v1, v0, v4
-
-    const/16 v1, 0x10
-
-    const/16 v2, 0x37
-
-    aput v2, v0, v1
-
-    const/16 v1, 0x11
-
-    const/16 v2, 0x3b
-
-    aput v2, v0, v1
-
-    const/16 v1, 0x12
-
-    const/16 v2, 0x40
-
-    aput v2, v0, v1
-
-    const/16 v1, 0x13
-
-    const/16 v2, 0x45
-
-    aput v2, v0, v1
-
-    const/16 v1, 0x14
-
-    .line 53
-    const/16 v2, 0x49
-
-    aput v2, v0, v1
-
-    const/16 v1, 0x15
-
-    const/16 v2, 0x4f
-
-    aput v2, v0, v1
-
-    const/16 v1, 0x16
-
-    const/16 v2, 0x52
-
-    aput v2, v0, v1
-
-    const/16 v1, 0x17
-
-    const/16 v2, 0x55
-
-    aput v2, v0, v1
-
-    const/16 v1, 0x18
-
-    const/16 v2, 0x57
-
-    aput v2, v0, v1
-
+#iArr[25]
     const/16 v1, 0x19
 
-    const/16 v2, 0x59
+    const/16 v2, 0x32
 
     aput v2, v0, v1
 
+#iArr[26]
     const/16 v1, 0x1a
 
-    const/16 v2, 0x5b
+    const/16 v2, 0x34
 
     aput v2, v0, v1
 
+#iArr[27]
     const/16 v1, 0x1b
 
-    const/16 v2, 0x5d
+    const/16 v2, 0x36
 
     aput v2, v0, v1
 
+#iArr[28]
     const/16 v1, 0x1c
 
-    const/16 v2, 0x61
+    const/16 v2, 0x38
 
     aput v2, v0, v1
 
+#iArr[29]
     const/16 v1, 0x1d
 
-    const/16 v2, 0x63
+    const/16 v2, 0x3a
 
     aput v2, v0, v1
 
     .line 54
-    aput v3, v0, v5
+#iArr[30]
+	const/16 v1, 0x1e
 
+    const/16 v2, 0x3c
+
+	aput v2, v0, v1
+
+#iArr[31]
+	const/16 v1, 0x1f
+
+    const/16 v2, 0x3e
+
+	aput v2, v0, v1
+
+#iArr[32]
+	const/16 v1, 0x20
+
+    const/16 v2, 0x3c
+
+	aput v2, v0, v1
+
+#iArr[33]
+	const/16 v1, 0x21
+
+    const/16 v2, 0x40
+
+	aput v2, v0, v1
+
+#iArr[34]
+	const/16 v1, 0x22
+
+    const/16 v2, 0x42
+
+	aput v2, v0, v1
+
+#iArr[35]
+	const/16 v1, 0x23
+
+    const/16 v2, 0x44
+
+	aput v2, v0, v1
+
+#iArr[36]
+	const/16 v1, 0x24
+
+    const/16 v2, 0x46
+
+	aput v2, v0, v1
+
+#iArr[37]
+	const/16 v1, 0x25
+
+    const/16 v2, 0x48
+
+	aput v2, v0, v1
+
+#iArr[38]
+	const/16 v1, 0x26
+
+    const/16 v2, 0x4a
+
+	aput v2, v0, v1
+
+#iArr[39]
+	const/16 v1, 0x27
+
+    const/16 v2, 0x4c
+
+	aput v2, v0, v1
+
+#iArr[40]
+	const/16 v1, 0x28
+
+    const/16 v2, 0x4e
+
+	aput v2, v0, v1
+
+#iArr[41]
+	const/16 v1, 0x29
+
+    const/16 v2, 0x50
+
+	aput v2, v0, v1
+
+#iArr[42]
+	const/16 v1, 0x2a
+
+    const/16 v2, 0x52
+
+	aput v2, v0, v1
+
+#iArr[43]
+	const/16 v1, 0x2b
+
+    const/16 v2, 0x54
+
+	aput v2, v0, v1
+
+#iArr[44]
+	const/16 v1, 0x2c
+
+    const/16 v2, 0x56
+
+	aput v2, v0, v1
+
+#iArr[45]
+	const/16 v1, 0x2d
+
+    const/16 v2, 0x58
+
+	aput v2, v0, v1
+
+#iArr[46]
+	const/16 v1, 0x2e
+
+    const/16 v2, 0x5a
+
+	aput v2, v0, v1
+
+#iArr[47]
+	const/16 v1, 0x2f
+
+    const/16 v2, 0x5c
+
+	aput v2, v0, v1
+
+#iArr[48]
+	const/16 v1, 0x30
+
+    const/16 v2, 0x5e
+
+	aput v2, v0, v1
+
+#iArr[49]
+	const/16 v1, 0x31
+
+    const/16 v2, 0x61
+
+	aput v2, v0, v1
+
+#iArr[50]
+	const/16 v1, 0x32
+
+    const/16 v2, 0x64
+
+	aput v2, v0, v1
     iput-object v0, p0, Lcom/ts/MainUI/Evc;->g_VolDbtb:[I
 
     .line 72
@@ -1729,14 +1909,14 @@
     if-ne p1, v5, :cond_2
 
     .line 418
-    add-int/lit8 v2, v1, 0x3
+    add-int/lit8 v2, v1, 0x2
 
     iget v3, p0, Lcom/ts/MainUI/Evc;->Gis_vol_max:I
 
     if-ge v2, v3, :cond_1
 
     .line 420
-    add-int/lit8 v1, v1, 0x3
+    add-int/lit8 v1, v1, 0x2
 
     .line 438
     :goto_0
@@ -1755,12 +1935,12 @@
 
     .line 429
     :cond_2
-    const/4 v2, 0x3
+    const/4 v2, 0x2
 
     if-le v1, v2, :cond_3
 
     .line 431
-    add-int/lit8 v1, v1, -0x3
+    add-int/lit8 v1, v1, -0x2
 
     .line 432
     goto :goto_0

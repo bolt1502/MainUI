@@ -947,7 +947,7 @@
     .locals 6
 
     .prologue
-    const/16 v5, 0x1e
+    const/16 v5, 0x32
 
     const/4 v2, 0x0
 
