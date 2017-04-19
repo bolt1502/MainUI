@@ -106,7 +106,7 @@
 
     const/4 v6, 0x0
 
-    const/16 v5, 0x33
+    const/16 v5, 0x32
 
     const/16 v4, 0xf
 
