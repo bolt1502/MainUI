@@ -544,7 +544,7 @@
     if-gez p2, :cond_0
 
     .line 591
-    const/16 p2, 0x1e
+    const/16 p2, 0x32
 
     .line 593
     :cond_0
