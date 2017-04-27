@@ -737,14 +737,14 @@
 
     .line 665
     .local v0, "nVol":I
-    const/16 v1, 0xf
+    const/16 v1, 0x00
 
-    if-gt p1, v1, :cond_0
+#    if-gt p1, v1, :cond_0
 
     .line 667
     int-to-double v1, p1
 
-    const-wide v3, 0x4016666666666666L    # 5.6
+    const-wide v3, 0x4000000000000000L    # 2.0
 
     mul-double/2addr v1, v3
 
@@ -763,18 +763,18 @@
 
     return v1
 
-    .line 671
-    .restart local v0    # "nVol":I
-    :cond_0
-    iget v1, p0, Lcom/ts/MainUI/Evc;->Other_vol_max:I
+#    .line 671
+#    .restart local v0    # "nVol":I
+#    :cond_0
+#    iget v1, p0, Lcom/ts/MainUI/Evc;->Other_vol_max:I
 
-    add-int/lit8 v1, v1, -0xf
+#    add-int/lit8 v1, v1, -0x19
 
-    sub-int v1, p1, v1
+#    sub-int v1, p1, v1
 
-    add-int/lit8 v0, v1, 0x55
+#    add-int/lit8 v0, v1, 0x55
 
-    goto :goto_0
+#    goto :goto_0
 
     .line 676
     .end local v0    # "nVol":I
