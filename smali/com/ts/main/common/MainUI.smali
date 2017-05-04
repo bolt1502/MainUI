@@ -2346,6 +2346,7 @@
     :cond_2
 
 #BEGIN SEND KEY CODE
+	if-eqz v4, :cond_2comp
     new-instance v13, Landroid/content/Intent;
 
     const-string v14, "com.wmmaks.c500companion.KEY"
@@ -2368,6 +2369,7 @@
     .line 29
     invoke-virtual {p0, v13}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
+	:cond_2comp
 #END SEND KEY CODE
 
     const/16 v5, 0x5c
