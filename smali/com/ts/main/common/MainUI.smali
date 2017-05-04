@@ -2344,6 +2344,32 @@
 
     .line 1184
     :cond_2
+
+#BEGIN SEND KEY CODE
+    new-instance v13, Landroid/content/Intent;
+
+    const-string v14, "com.wmmaks.c500companion.KEY"
+
+    invoke-direct {v13, v14}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 27
+    .local v13, "intent":Landroid/content/Intent;
+    const-string v14, "com.wmmaks.c500companion"
+
+    const-string v5, "com.wmmaks.c500companion.C500Service"
+
+    invoke-virtual {v13, v14, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 28
+    const-string v14, "KEY"
+
+    invoke-virtual {v13, v14, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 29
+    invoke-virtual {p0, v13}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+
+#END SEND KEY CODE
+
     const/16 v5, 0x5c
 
     if-eq v4, v5, :cond_3
